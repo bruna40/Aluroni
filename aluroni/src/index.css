@@ -1,0 +1,10 @@
+/* @import-normalize; */
+
+body {
+  background-color: #F6F6F6;
+}
+
+* {
+  box-sizing: border-box;
+  font-family: 'Italiana', serif;
+}

@@ -1,0 +1,112 @@
+@import '/src/styles/variaveis';
+@import '/src/styles/breakpoints';
+
+$massas: #D73B3B;
+$carnes: #30201E;
+$combos: #E6C864;
+$veganos: #80AA40;
+
+.itens {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    gap:2.5rem;
+    width: 100%;
+}
+
+.item {
+    display: flex;
+    flex-wrap: wrap;
+    width: 90%;
+    &__img {
+        min-width: 15rem;
+        @media(max-width: $desktop_xsm) {
+            width: 100%;
+        }
+        img {
+            border-radius: 0.5rem;
+            width: 100%;
+        }
+    }
+    &__description {
+        display: flex;
+        flex:1;
+        flex-direction: column;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        padding: 0 1.25rem;
+        @media (max-width: $desktop_xsm) {
+            flex-direction: row;
+            margin-top: 1.25rem;
+            padding: 0;
+        }
+    }
+    &__title {
+        h2 {
+            font-size: 2rem;
+            font-weight: bold;
+            margin-bottom: 1.25rem;
+        }
+        p {
+            color: $dark-grey;
+            font-size: 1.3rem;
+            font-weight: 600;
+            max-width: 37.5rem;
+            margin-bottom: 1.25rem;
+        }
+    }
+    &__tags {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        margin-bottom: 1.25rem;
+        max-width: 43.75rem;
+        @media (max-width: $desktop_xsm) {
+            justify-content: flex-end;
+        }
+        @media (max-width: $mobile) {
+            justify-content: flex-start;
+        }
+        > div {
+            margin: 10px;
+        }
+    }
+    &__tipo {
+        align-items: center;
+        border-radius: 2px;
+        display: flex;
+        font-weight: bold;
+        height: 2.5rem;
+        justify-content: center;
+        padding: 10px 30px;
+        &__massas {
+            background-color: $massas;
+            color: white;
+        }
+        &__carnes {
+            background-color: $carnes;
+            color: white;
+        }
+        &__combos {
+            background-color: $combos;
+        }
+        &__veganos {
+            background-color: $veganos;
+        }
+    }
+    &__porcao,
+    &__qtd,
+    &__price {
+        align-items: center;
+        display: flex;
+        font-size: 1.25rem;
+        font-weight: bold;
+        justify-content: center;
+    }
+    &__price {
+        color: $red;
+        font-size: 1.7rem;
+    }
+
+
+}

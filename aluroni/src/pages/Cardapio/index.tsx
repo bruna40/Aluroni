@@ -5,6 +5,7 @@ import { useState } from 'react';
 import { Header } from '../../components/Header';
 import { Filtros } from '../../components/Filtros';
 import { Ordenador } from '../../components/Ordenador';
+import { Itens } from '../../components/Itens';
 
 export function Cardapio() {
     const [search, setSearch] = useState('');
@@ -32,7 +33,7 @@ export function Cardapio() {
                         setOrder={ setOrder }
                     />
                 </div>
-                
+                <Itens />
             </section>
         </main>
     )

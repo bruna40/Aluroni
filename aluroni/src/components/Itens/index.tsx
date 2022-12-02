@@ -1,12 +1,46 @@
 import cardapio from '../../utils/itens.json';
 import styles from './style.module.scss';
 import classNames from 'classnames';
+import { IItens } from '../../@types/Itens';
+import { useEffect, useState } from 'react';
 
-export function Itens() {
+export function Itens({value, order, filter}: IItens) {
+   const [list, setList] = useState(cardapio);
+
+   function testaBusca(titulo: string) {
+        const regex = new RegExp(value, 'i');
+        return regex.test(titulo)
+   }
+
+   function testaFiltro(id:number) {
+        if(filter) return filter === id;
+        return true;
+   }
+
+   function ordenador(lista:typeof cardapio) {
+        switch(order) {
+            case 'porcao':
+                return lista.sort((a,b) => a.size - b.size);
+            case 'preco':
+                return lista.sort((a,b) => a.price - b.price);
+            case 'qtd_pessoas':
+                return lista.sort((a,b) => a.serving - b.serving);
+            default:
+                return lista;
+
+        }
+   }
+
+   useEffect(() => {
+     const novaLista = cardapio.filter((item) => 
+        testaBusca(item.title) && testaFiltro(item.category.id)
+    );
+        setList(ordenador(novaLista));
+   },[filter, value, order]);
     return(
         <div className={styles.itens}>
            {
-                cardapio.map((item) => (
+                list.map((item) => (
                     <div className={styles.item}>
                        <div className={styles.item__img}>
                             <img src={item.photo} alt={item.title} />

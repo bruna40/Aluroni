@@ -33,7 +33,11 @@ export function Cardapio() {
                         setOrder={ setOrder }
                     />
                 </div>
-                <Itens />
+                <Itens
+                    value={ search }
+                    order={ order }
+                    filter={ filter }
+                />
             </section>
         </main>
     )

@@ -1,13 +1,13 @@
-import React from 'react';
-import { Cardapio } from './pages/Cardapio';
 import 'normalize.css';
 import './index.css';
+import { Router } from './Router.';
+
 
 
 function App() {
   return (
     <div >
-      <Cardapio />
+      <Router />
     </div>
   );
 }

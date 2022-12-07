@@ -1,4 +1,5 @@
 import styles from './style.module.scss';
+import stylesTema from '../../styles/Tema.module.scss';
 import { Buscador } from '../../components/Buscador';
 import { useState } from 'react';
 import { Filtros } from '../../components/Filtros';
@@ -11,7 +12,7 @@ export function Cardapio() {
   const [order, setOrder] = useState('null');
   return (
     <section className={ styles.section }>
-      <h3 className={ styles.setion__title}>Cardápio</h3>
+      <h3 className={ stylesTema.titulo}>Cardápio</h3>
       <Buscador 
         value={ search }
         onChange={ setSearch }

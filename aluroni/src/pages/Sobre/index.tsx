@@ -1,5 +1,5 @@
 export function Sobre() {
   return (
-    <h1>sikdfghikjadhkgfahkadhkjdhfkjhasdkjdfhkajsd</h1>
+    <h1>Sobre</h1>
   );
 }

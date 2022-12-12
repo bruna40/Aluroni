@@ -1,12 +1,18 @@
 import styles from './styles.module.scss';
-import { useLocation, useNavigate } from 'react-router-dom';
+import itens from '../../Data/itens.json';
+import { useNavigate, useParams } from 'react-router-dom';
 import classNames from 'classnames';
+import { NotFound } from '../NotFound';
 
 
 export function Pratos() {
   const history = useNavigate();
-  const { state } = useLocation();
-  const { prato } = state;
+  const { id } = useParams();
+  const prato = itens.find((item) => item.id === Number(id));
+  if(!prato) {
+    return <NotFound />;
+  }
+  
  
   return (
     <>

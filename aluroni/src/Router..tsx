@@ -15,8 +15,8 @@ export function Router() {
           <Route path='/' element={<Inicio />} />
           <Route path='/cardapio' element={<Cardapio />} />
           <Route path='/sobre' element={<Sobre />} />
-          <Route path='/pratos/:id' element={<Pratos />} />
         </Route>
+        <Route path='/pratos/:id' element={<Pratos />} />
         <Route path='*' element={<NotFound />} />
       </Routes>
     </BrowserRouter>
